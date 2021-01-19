@@ -1,4 +1,96 @@
-
 <app-header></app-header>
 
-<pre><code>{{ data | json }}</code></pre>
+<div class="container-fluid">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <br><br>
+        <h5>Filtro de Busqueda</h5>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatOne()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Normal</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatTwo()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Fuego</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatThree()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Agua</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatFour()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Planta</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatFive()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Electrico</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatSix()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Hielo</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatSeven()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Lucha</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatEight()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Veneno</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatNine()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Tierra</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatTen()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Volador</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatEleven()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Psiquico</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatTwelve()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Bicho</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatThirteen()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Roca</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatFourteen()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Fantasma</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatFifteen()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Dragón</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatSixteen()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Siniestro</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatSeventeen()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Acero</label>
+        </div>
+        <div class="form-check form-switch">
+          <input (click)="getPokemonsCatEighteen()" class="form-check-input" type="checkbox">
+          <label class="form-check-label">Hada</label>
+        </div>
+      </div>
+
+      <!-- Imagenes y Nombres de los Pokemon-->
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-2 text-center" *ngFor="let pokemon of data">
+            <img src="{{ pokemon?.image }}" alt="">
+            <h4>{{pokemon.name}}</h4>
+            <button type="button" class="btn btn-primary">More Information</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <app-footer></app-footer>

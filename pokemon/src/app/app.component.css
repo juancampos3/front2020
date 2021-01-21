@@ -1,0 +1,19 @@
+.row img {
+  width: 200px;
+  height: 200px;
+}
+
+h5{
+  text-align: center;
+  font-family: 'Xanh Mono', monospace;
+  font-size: 30px;
+}
+
+h4{
+  font-family: 'Yusei Magic', sans-serif;
+}
+
+label {
+  font-family: 'Yeon Sung', cursive;
+  font-size: 20px;
+}

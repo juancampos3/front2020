@@ -289,4 +289,46 @@ export class AppComponent implements OnInit {
             );
           }
         }
+        public getPokemonsCatThirteen() {
+          let pokemonData;
+          this.data = [];
+          for (let i = 73; i <= 78; i++) {
+            this.pokemonService.getPokemons(i).subscribe(
+              res => {
+                pokemonData = {
+                  position: i,
+                  image: res.sprites.front_default,
+                  name: res.name
+                };
+                console.log(pokemonData);
+                //console.log(res);
+                this.data.push(pokemonData);
+              },
+              err => {
+                console.log(err);
+              }
+            );
+          }
+        }
+        public getPokemonsCatFourteen() {
+          let pokemonData;
+          this.data = [];
+          for (let i = 79; i <= 84; i++) {
+            this.pokemonService.getPokemons(i).subscribe(
+              res => {
+                pokemonData = {
+                  position: i,
+                  image: res.sprites.front_default,
+                  name: res.name
+                };
+                console.log(pokemonData);
+                //console.log(res);
+                this.data.push(pokemonData);
+              },
+              err => {
+                console.log(err);
+              }
+            );
+          }
+        }
 }

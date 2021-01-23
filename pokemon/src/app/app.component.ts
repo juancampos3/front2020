@@ -7,9 +7,9 @@ import { PokemonService } from './services/pokemon.services';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'pokemon';
+  title = 'PokeApi';
   data: any[] = [];
-
+  pokemonData: any;
   pokemons = [];
 
   constructor(private pokemonService: PokemonService) { }
@@ -18,25 +18,88 @@ export class AppComponent implements OnInit {
     this.getPokemons();
   }
 
-  getPokemons() {
+  getPokemons() {​​
     let pokemonData;
+    for (let i = 1; i <= 108; i++) {​​
 
-    for (let i = 1; i <= 3; i++) {
       this.pokemonService.getPokemons(i).subscribe(
-        res => {
-          pokemonData = {
+        res => {​​
+          pokemonData = {​​
             position: i,
             image: res.sprites.front_default,
             name: res.name
-          };
+          }​​;
           console.log(pokemonData);
           console.log(res);
-          this.data.push(res);
-        },
-        err => {
+          this.data.push(pokemonData);
+        }​​,
+        err => {​​
           console.log(err);
-        }
+        }​​
       );
-    }
+    }​​
   }
+  public getPokemonsCatOne() {​​
+
+    let pokemonData;
+    this.data = [];
+    for (let i = 1; i <= 6; i++) {​​
+      this.pokemonService.getPokemons(i).subscribe(
+        res => {​​
+          pokemonData = {​​
+            position: i,
+            image: res.sprites.front_default,
+            name: res.name
+          }​​;
+          console.log(pokemonData);
+          this.data.push(pokemonData);
+        }​​,
+        err => {​​
+          console.log(err);
+        }​​
+      );
+    }​​
+  }
+  public getPokemonsCatTwo() {​​
+
+    let pokemonData;
+    this.data = [];
+    for (let i = 7; i <= 12; i++) {​​
+      this.pokemonService.getPokemons(i).subscribe(
+        res => {​​
+          pokemonData = {​​
+            position: i,
+            image: res.sprites.front_default,
+            name: res.name
+          }​​;
+          console.log(pokemonData);
+          this.data.push(pokemonData);
+        }​​,
+        err => {​​
+          console.log(err);
+        }​​
+      );
+    }​​
+  }
+  public getPokemonsCatThree() {​​
+
+    let pokemonData;
+    this.data = [];
+    for (let i = 13; i <= 18; i++) {​​
+      this.pokemonService.getPokemons(i).subscribe(
+        res => {​​
+          pokemonData = {​​
+            position: i,
+            image: res.sprites.front_default,
+            name: res.name
+          }​​;
+          console.log(pokemonData);
+          this.data.push(pokemonData);
+        }​​,
+        err => {​​
+          console.log(err);
+        }​​
+      );
+    }​​
+  }​​​​​​​​
 }

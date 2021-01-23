@@ -122,6 +122,7 @@ export class AppComponent implements OnInit {
         }
       );
     }
+  }
     public getPokemonsCatFive() {
       let pokemonData;
       this.data = [];
@@ -142,6 +143,7 @@ export class AppComponent implements OnInit {
           }
         );
       }
+    }
       public getPokemonsCatSix() {
         let pokemonData;
         this.data = [];
@@ -162,6 +164,45 @@ export class AppComponent implements OnInit {
             }
           );
         }
-     
-      ​​​​​​​​
+      }
+      ​​​​​​​​public getPokemonsCatSeven() {
+        let pokemonData;
+        this.data = [];
+        for (let i = 37; i <= 42; i++) {
+          this.pokemonService.getPokemons(i).subscribe(
+            res => {
+              pokemonData = {
+                position: i,
+                image: res.sprites.front_default,
+                name: res.name
+              };
+              console.log(pokemonData);
+              //console.log(res);
+              this.data.push(pokemonData);
+            },
+            err => {
+              console.log(err);
+            }
+          );
+        }
+      }
+      public getPokemonsCatEight() {
+        let pokemonData;
+        this.data = [];
+        for (let i = 43; i <= 48; i++) {
+          this.pokemonService.getPokemons(i).subscribe(
+            res => {
+              pokemonData = {
+                position: i,
+                image: res.sprites.front_default,
+                name: res.name
+              };
+              console.log(pokemonData);
+              this.data.push(pokemonData);
+            },
+            err => {
+              console.log(err);
+            }
+          );
+        }
 }

@@ -205,7 +205,7 @@ export class AppComponent implements OnInit {
             }
           );
         }
-        } 
+        }
         public getPokemonsCatNine() {
           let pokemonData;
           this.data = [];
@@ -373,5 +373,25 @@ export class AppComponent implements OnInit {
             );
           }
         }
-        
+        public getPokemonsCatSeventeen() {
+          let pokemonData;
+          this.data = [];
+          for (let i = 97; i <= 102; i++) {
+            this.pokemonService.getPokemons(i).subscribe(
+              res => {
+                pokemonData = {
+                  position: i,
+                  image: res.sprites.front_default,
+                  name: res.name
+                };
+                console.log(pokemonData);
+                //console.log(res);
+                this.data.push(pokemonData);
+              },
+              err => {
+                console.log(err);
+              }
+            );
+          }
+        }
 }

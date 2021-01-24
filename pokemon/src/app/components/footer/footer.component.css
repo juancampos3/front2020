@@ -1,7 +1,8 @@
-h3, p, h1, h2 {​​​​
+h3, p, h1, h2, .equipo {
+  font-family : 'Turret Road', cursive;
   text-align: center;
-  font-family: 'Turret Road', cursive;
-}​​​​
-#equipo {​​​​
-  text-align: left;
-}​​​​
+  }
+
+  .equipo {
+      text-align: left;
+  }

@@ -91,14 +91,20 @@
         </div>
       </div>
     </div>
-    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+
+      aria-hidden="true" *ngFor="let pokemon of data">
+
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
-          <img src="{​​​​​{​​​​​ pokemonSelected?.image }​​​​​}​​​​​"alt="">
+          <img src="{​​​​{​​​​ pokemonSelected?.image }​​​​}​​​​" alt="">
+          <div class="container-fluid">
+            <h6>Nombre: {​​​​{​​​​pokemonSelected?.name}​​​​}​​​​</h6>
+          </div>
         </div>
       </div>
     </div>
-
+    
     <br>
     <!--Comunicacion componente header pokemon y footer-->
     <app-footer></app-footer>

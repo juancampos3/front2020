@@ -86,7 +86,8 @@
           <div class="col-md-2 text-center" *ngFor="let pokemon of data">
             <img src="{{ pokemon.image }}" alt="">
             <h4>{{pokemon.name}}</h4>
-            <button type="button" class="btn btn-primary">More Information</button>
+            <button (click)="seleccionarPokemon(pokemon)" type="button" class="btn btn-primary" data-toggle="modal"
+              data-target=".bd-example-modal-sm">More Information</button>
           </div>
         </div>
       </div>

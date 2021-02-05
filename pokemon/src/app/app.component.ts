@@ -9,8 +9,10 @@ import { PokemonService } from './services/pokemon.services';
 export class AppComponent implements OnInit {
   title = 'PokeApi';
   data: any[] = [];
+  pokemonsList: any[] = [];
   pokemonData: any;
   pokemons = [];
+  pokemonSelected = null;
 
   constructor(private pokemonService: PokemonService) { }
 
@@ -18,6 +20,9 @@ export class AppComponent implements OnInit {
     this.getPokemons();
   }
 
+  seleccionarPokemon(pokemon: any) {
+    this.pokemonSelected = pokemon;
+  }
   getPokemons() {​​
     let pokemonData;
     for (let i = 1; i <= 108; i++) {​​
@@ -414,5 +419,5 @@ export class AppComponent implements OnInit {
               }
             );
           }
-        }      
+        }
 }

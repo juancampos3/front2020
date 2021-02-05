@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +11,15 @@ export class PokemonService {
 
   constructor(private http: HttpClient) { }
 
-//obtiene pokemon
+  requestOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    }),
+    method: 'GET',
+    mode: 'no-cors'
+  };
   getPokemons(index){
-    return this.http.get<any>(`${this.api}/pokemon/${index}`);
+    return this.http.get<any>(`${this.api}/pokemon/${index}`, this.requestOptions);
   }
-
-
 }

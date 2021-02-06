@@ -13,7 +13,27 @@ export class AppComponent implements OnInit {
   pokemonData: any;
   pokemons = [];
   pokemonSelected = null;
- 
+  species = [
+    {value: 'all', name: 'Todos'},
+    {value: 'normal', name: 'Normal'},
+    {value: 'fighting', name: 'Lucha'},
+    {value: 'flying', name: 'Volador'},
+    {value: 'poison', name: 'Veneno'},
+    {value: 'ground', name: 'Tierra'},
+    {value: 'rock', name: 'Roca'},
+    {value: 'bug', name: 'Bicho'},
+    {value: 'ghost', name: 'Fantasma'},
+    {value: 'steel', name: 'Acero'},
+    {value: 'fire', name: 'Fuego'},
+    {value: 'water', name: 'Agua'},
+    {value: 'grass', name: 'Planta'},
+    {value: 'electric', name: 'Electrico'},
+    {value: 'psychic', name: 'Psiquico'},
+    {value: 'ice', name: 'Hielo'},
+    {value: 'dragon', name: 'Dragon'},
+    {value: 'dark', name: 'Siniestro'},
+    {value: 'fairy', name: 'Hada'},
+  ];
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {

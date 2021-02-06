@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   pokemonData: any;
   pokemons = [];
   pokemonSelected = null;
-
+ 
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
@@ -23,27 +23,30 @@ export class AppComponent implements OnInit {
   seleccionarPokemon(pokemon: any) {
     this.pokemonSelected = pokemon;
   }
-  getPokemons() {​​
-    let pokemonData;
-    for (let i = 1; i <= 108; i++) {​​
-
-      this.pokemonService.getPokemons(i).subscribe(
-        res => {​​
-          pokemonData = {​​
-            position: i,
-            image: res.sprites.front_default,
-            name: res.name
-          }​​;
-          console.log(pokemonData);
-          console.log(res);
-          this.data.push(pokemonData);
-        }​​,
-        err => {​​
-          console.log(err);
-        }​​
+  
+​getPokemons() {​​​​​
+this.pokemonsList = [];
+let pokemonData;
+for (let i = 1; i <= 898; i++) {​​​​​
+this.pokemonService.getPokemons(i).subscribe(
+        (res) => {​​​​​
+pokemonData = {​​​​​
+position:i,
+image:res.sprites.front_default,
+name:res.name,
+height:res.height,
+weight:res.weight,
+types:res.types,
+          }​​​​​;
+this.pokemonsList[i - 1] = pokemonData;
+        }​​​​​,
+        (err) => {​​​​​
+console.log(err);
+        }​​​​​
       );
-    }​​
-  }
+    }​​​​​
+this.data = this.pokemonsList;
+  }​​​​​
   public getPokemonsCatOne() {​​
 
     let pokemonData;

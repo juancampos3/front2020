@@ -443,4 +443,13 @@ this.data = this.pokemonsList;
             );
           }
         }
+        public getPokemonsFilteredByType(filteredType: string) {
+          if (filteredType == 'all') return this.clearFilter();
+          let filteredPokemons = [];
+          filteredPokemons = this.pokemonsList.filter((currPokemon) => {
+            console.log('currPokemon',currPokemon)
+            return currPokemon.types.some((type) => type.type.name == filteredType)
+          });
+          this.data = filteredPokemons;
+        }    
 }

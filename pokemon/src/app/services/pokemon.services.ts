@@ -19,6 +19,7 @@ export class PokemonService {
     method: 'GET',
     mode: 'no-cors'
   };
+
   getPokemons(index){
     return this.http.get<any>(`${this.api}/pokemon/${index}`, this.requestOptions);
   }

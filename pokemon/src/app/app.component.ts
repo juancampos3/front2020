@@ -451,5 +451,8 @@ this.data = this.pokemonsList;
             return currPokemon.types.some((type) => type.type.name == filteredType)
           });
           this.data = filteredPokemons;
-        }    
+        }
+        private clearFilter() {
+          this.data = this.pokemonsList;
+        }       
 }
